@@ -1,6 +1,7 @@
 class Solution(object):
     def isPalindrome(self, s):
-        strs = []
+        # using deque
+        strs = collections.deque()
 
         # preprocessing (because of Alphanumeric characters codition)
         for char in s:
@@ -9,7 +10,7 @@ class Solution(object):
 
         # is palindrome checker
         while len(strs) > 1:
-            if strs.pop(0) != strs.pop():
+            if strs.popleft() != strs.pop():
                 return False
 
         return True
